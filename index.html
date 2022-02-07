@@ -30,6 +30,10 @@
                   <li class="splide__slide"><img src="img/splide/ph.png"></li>
               </ul>
         </div>
+        <div class="splide__progress">
+            <div class="splide__progress__bar">
+            </div>
+      </div>
       </div>
     <main>
         <div id="shop">
@@ -90,13 +94,11 @@
         </div>
     </main>
     <footer>
-
+        <p>Website Written for E-Business Category in FBLA by Timothy Zayac.</p>
     </footer>
     <script>
-        const slide = new Splide( '.splide' );
+        const slide = new Splide( '.splide', {autoplay:true} );
         slide.mount();
-        slide.play();
-        slide.autoplay = true;
       </script>
 </body>
 </html>

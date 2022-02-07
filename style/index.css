@@ -8,7 +8,7 @@ header {
 
     display: flex;
 
-    background: red;
+    background: #aaa;
 
     align-items: center;
     justify-content: center;
@@ -20,7 +20,7 @@ header ul {
     display: flex;
     padding-left: 0;
     list-style-type: none;
-    background: green;
+    background: #ddd;
 }
 
 header ul a {
@@ -30,7 +30,7 @@ header ul a {
     padding: 10px;
     margin: 5px;
 
-    background: purple;
+    background: #ccc;
 }
 
 header ul a:first-of-type {
@@ -44,7 +44,7 @@ header ul a:last-of-type {
 #shop{
     display: flex;
     width: 70%;
-    background-color: rgb(125, 194, 35);
+    background-color: #999;
     padding: 6px;
     flex-wrap: wrap;
     justify-content: center;
@@ -52,7 +52,7 @@ header ul a:last-of-type {
 
 #shop .item{
     width: 300px;
-    background-color: aqua;
+    background-color: #ddd;
     margin: 6px;
     width: 250px;
     height: 350px;
@@ -81,6 +81,7 @@ header ul a:last-of-type {
 
 #shop .item img{
     width: 100%;
+    transition: transform .2s ease-out
 }
 
 #shop .item p{
@@ -90,13 +91,12 @@ header ul a:last-of-type {
 
 #shop .item .photo{
     padding: 10px;
-    background-color: firebrick;
+    background-color: #bbb;
     flex: 1;
-    transition: transform .15s ease-out
 }
 
-#shop .item .photo:hover{
-    transform: scale(1.15);
+.photo:hover img {
+    transform: scale(1.1);
 }
 
 /* #shop .item .photo:active{
@@ -106,37 +106,42 @@ header ul a:last-of-type {
 main {
     display: flex;
     width: 100%;
-    background-color: cornflowerblue;
+    background-color: #666;
     justify-content: center;
+    padding-bottom: 30px;
 }
 
 .splide__slide img{
     width: 100%;
+    height: 200px;
+}
+
+.splide{
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.splide:first-of-type{
+    width: 100%;
     height: auto;
 }
 
-.splide__slide{
+.splide:last-of-type{
     width: 100%;
     height: auto;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    background-color: rebeccapurple;
 }
 
-.splide__slide:first-of-type{
-    width: 100%;
-    height: auto;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    background-color: rebeccapurple;
+footer{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #888;
+    text-align: center;
 }
 
-.splide__slide:last-of-type{
-    width: 100%;
-    height: auto;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-right: 5px;
-    background-color: rebeccapurple;
+footer p{
+    margin: 0;
 }
+
+/* #800000 red
+   #ffd700 yellow */
