@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    <script src="js/splide.min.js"></script>
+    <link href="style/splide.min.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -20,6 +22,15 @@
             <a href="cart.html"><li>ShCa</li></a>
         </ul>
     </header>
+    <div class="splide">
+        <div class="splide__track">
+              <ul class="splide__list">
+                  <li class="splide__slide"><img src="img/splide/ph.png"></li>
+                  <li class="splide__slide"><img src="img/splide/ph.png"></li>
+                  <li class="splide__slide"><img src="img/splide/ph.png"></li>
+              </ul>
+        </div>
+      </div>
     <main>
         <div id="shop">
             <div class="item">
@@ -81,5 +92,8 @@
     <footer>
 
     </footer>
+    <script>
+        new Splide( '.splide' ).mount();
+      </script>
 </body>
 </html>

@@ -64,6 +64,10 @@ header ul a:last-of-type {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
+    flex: 1;
+    padding-bottom: 5px;
+    padding-top: 2px;
 }
 
 #shop .item .description p{
@@ -73,7 +77,6 @@ header ul a:last-of-type {
 #shop .item .description button{
     flex: 1;
     width: 40%;
-    align-items: center;
 }
 
 #shop .item img{
@@ -88,11 +91,31 @@ header ul a:last-of-type {
 #shop .item .photo{
     padding: 10px;
     background-color: firebrick;
+    flex: 1;
+    transition: transform .15s ease-out
 }
+
+#shop .item .photo:hover{
+    transform: scale(1.15);
+}
+
+/* #shop .item .photo:active{
+    transform: scale(0.9);
+} */
 
 main {
     display: flex;
     width: 100vw;
     background-color: cornflowerblue;
     justify-content: center;
+}
+
+.splide__slide img{
+    width: 100%;
+    height: auto;
+}
+
+.splide__slide{
+    width: 100%;
+    height: auto;
 }
