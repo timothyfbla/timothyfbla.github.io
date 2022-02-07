@@ -1,19 +1,38 @@
 body{
     font-family: roboto;
+    margin: 0;
 }
 
 header ul{
     display: flex;
-    background-color: red;
+    background-color: #bbb;
     width: 75%;
+    height: 30px;
+    padding-left: 0;
+    text-align: center;
+    align-items: center;
 }
 
 header ul li{
     flex:1;
+    list-style-type: none;
+    height: fit-content;
+    border: #888 solid;
+    box-shadow: #555 0px 5px 6px;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+header ul li a{
+    width: fit-content;
+    height: fit-content;
 }
 
 header{
     display: flex;
     justify-content: center;
     width: 100vw;
+    margin: 0;
 }
