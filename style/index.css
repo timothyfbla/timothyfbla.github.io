@@ -3,36 +3,96 @@ body{
     margin: 0;
 }
 
-header ul{
-    display: flex;
-    background-color: #bbb;
-    width: 75%;
-    height: 30px;
-    padding-left: 0;
-    text-align: center;
-    align-items: center;
-}
-
-header ul li{
-    flex:1;
-    list-style-type: none;
-    height: fit-content;
-    border: #888 solid;
-    box-shadow: #555 0px 5px 6px;
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-}
-
-header ul li a{
-    width: fit-content;
-    height: fit-content;
-}
-
-header{
-    display: flex;
-    justify-content: center;
+header {
     width: 100vw;
-    margin: 0;
+
+    display: flex;
+
+    background: red;
+
+    align-items: center;
+    justify-content: center;
+}
+
+header ul {
+    width: 80%;
+    
+    display: flex;
+    padding-left: 0;
+    list-style-type: none;
+    background: green;
+}
+
+header ul a {
+    flex: 1;
+    text-align: center;
+
+    padding: 10px;
+    margin: 5px;
+
+    background: purple;
+}
+
+header ul a:first-of-type {
+    border-radius: 15px 0 0 15px;
+}
+
+header ul a:last-of-type {
+    border-radius: 0 15px 15px 0;
+}
+
+#shop{
+    display: flex;
+    width: 70%;
+    background-color: rgb(125, 194, 35);
+    padding: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#shop .item{
+    width: 300px;
+    background-color: aqua;
+    margin: 6px;
+    width: 250px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+#shop .item .description{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#shop .item .description p{
+    flex: 1;
+}
+
+#shop .item .description button{
+    flex: 1;
+    width: 40%;
+    align-items: center;
+}
+
+#shop .item img{
+    width: 100%;
+}
+
+#shop .item p{
+    text-align: center;
+    margin: 3px;
+}
+
+#shop .item .photo{
+    padding: 10px;
+    background-color: firebrick;
+}
+
+main {
+    display: flex;
+    width: 100vw;
+    background-color: cornflowerblue;
+    justify-content: center;
 }
