@@ -20,7 +20,6 @@ header ul {
     display: flex;
     padding-left: 0;
     list-style-type: none;
-    background: #ddd;
 }
 
 header ul a {
@@ -29,8 +28,18 @@ header ul a {
 
     padding: 10px;
     margin: 5px;
+    border: #666 solid;
+    box-shadow: rgba(85, 85, 85, 0.5) 0px 5px 7px;
+    transition: .11s ease-out;
+    color:inherit;
+    text-decoration: inherit;
+    font-size: 1.2em;
 
     background: #ccc;
+}
+
+header ul a:hover {
+    filter: brightness(110%);
 }
 
 header ul a:first-of-type {
@@ -89,6 +98,24 @@ header ul a:last-of-type {
     margin: 3px;
 }
 
+#shop .item button{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 9px;
+    box-shadow: rgba(85, 85, 85, 0.5) 0px 2px 2px;
+    cursor: pointer;
+    transition: all 0.1s ease-out;
+}
+
+#shop .item button:hover{
+    filter: brightness(110%);
+}
+
 #shop .item .photo{
     padding: 10px;
     background-color: #bbb;
@@ -113,7 +140,7 @@ main {
 
 .splide__slide img{
     width: 100%;
-    height: 200px;
+    height: 250px;
 }
 
 .splide{
