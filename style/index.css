@@ -4,7 +4,7 @@ body{
 }
 
 header {
-    width: 100vw;
+    width: 100%;
 
     display: flex;
 
@@ -105,7 +105,7 @@ header ul a:last-of-type {
 
 main {
     display: flex;
-    width: 100vw;
+    width: 100%;
     background-color: cornflowerblue;
     justify-content: center;
 }
@@ -118,4 +118,25 @@ main {
 .splide__slide{
     width: 100%;
     height: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rebeccapurple;
+}
+
+.splide__slide:first-of-type{
+    width: 100%;
+    height: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    background-color: rebeccapurple;
+}
+
+.splide__slide:last-of-type{
+    width: 100%;
+    height: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    background-color: rebeccapurple;
 }

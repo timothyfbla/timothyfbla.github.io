@@ -93,7 +93,10 @@
 
     </footer>
     <script>
-        new Splide( '.splide' ).mount();
+        const slide = new Splide( '.splide' );
+        slide.mount();
+        slide.play();
+        slide.autoplay = true;
       </script>
 </body>
 </html>
