@@ -40,6 +40,7 @@ header ul a {
 
 header ul a:hover {
     filter: brightness(110%);
+    transform: scale(1.05);
 }
 
 header ul a:first-of-type {
@@ -114,6 +115,7 @@ header ul a:last-of-type {
 
 #shop .item button:hover{
     filter: brightness(110%);
+    transform: scale(1.05);
 }
 
 #shop .item .photo{
@@ -123,7 +125,7 @@ header ul a:last-of-type {
 }
 
 .photo:hover img {
-    transform: scale(1.1);
+    transform: scale(1.07);
 }
 
 /* #shop .item .photo:active{
