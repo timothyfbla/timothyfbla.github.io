@@ -9,11 +9,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    <script src="js/localforage.min.js"></script>
     <script src="js/splide.min.js"></script>
     <script src="js/index.js"></script>
     <link href="style/splide.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
-</head>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+    const shop = new Shop( document.getElementById('shop') )
+
+    shop.addItem( new Item('Perry High Athletic T-Shirt1','$15.00',['XS','S','M','L','XL'],'img/pts.png') )
+    shop.addItem( new Item('Perry High Athletic T-Shirt2','$15.00',['XS','S','M','L','XL'],'img/pts.png') )
+    shop.addItem( new Item('Perry High Athletic T-Shirt3','$15.00',['XS','S','M','L','XL'],'img/pts.png') )
+    shop.addItem( new Item('Perry High Athletic T-Shirt4','$15.00',['XS','S','M','L','XL'],'img/pts.png') )
+    shop.addItem( new Item('Perry High Athletic T-Shirt5','$15.00',['XS','S','M','L','XL'],'img/pts.png') )
+    shop.addItem( new Item('Perry High Athletic T-Shirt6','$15.00',['XS','S','M','L','XL'],'img/pts.png') )
+    shop.addItem( new Item('Perry High Athletic T-Shirt7','$15.00',['XS','S','M','L','XL'],'img/pts.png') )
+
+    shop.render()
+
+    // console.log(shop)    
+})
+    </script>
 <body>
     <h1 style="text-align: center; background-color: #bbb;">Perry High School Merchandise</h1>
     <header>
@@ -23,8 +40,8 @@
             <a href="contactus.html"><li>Contact Us</li></a>
             <a href="https://phs.hcbe.net"><li>PHS</li></a>
             <a href="cart.html"><li>Shopping Cart
-                <div class="shcanot">
-                11
+                <div class="shcanot" id="shcanot">
+                0
                 </div>
             </li></a>
         </ul>

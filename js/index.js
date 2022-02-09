@@ -1,7 +1,29 @@
+
+
+
+function findByMatchingProperties(set, properties) {
+    return set.filter(function (entry) {
+        return Object.keys(properties).every(function (key) {
+            return entry[key] === properties[key];
+        })
+    })
+}
+
 class Shop {
     constructor(el, items = []) {
         this.el = el
         this.items = items
+
+        this.cart = []
+
+        localforage.getItem('perryCart').then(cart => {
+            // if (cart) {
+            //     this.cart = cart
+            cart ? this.cart = cart : localforage.setItem('perryCart', [])
+
+            this.updateCart()
+            this.updateItems()
+        })
     }
 
     addItem(item) {
@@ -15,8 +37,35 @@ class Shop {
         }
     }
 
+    updateItems() {
+        for (let item of this.items) {
+            item.update()
+        }        
+    }
+
     addToCart(item) {
-        console.log(item)
+        this.cart.push( item.getCartItem() )
+        // console.log(this.cart)
+
+        this.updateCart()
+    }
+    removeFromCart(item) {
+        let find = findByMatchingProperties(this.cart, item.getCartItem())[0]
+        this.cart.splice( this.cart.indexOf(find), 1 )
+        // console.log(this.cart)
+
+        this.updateCart()
+    }
+
+    updateCart() {
+        // if (localforage.getItem('perryCart')) localforage.setItem('perryCart', this.cart)
+        localforage.getItem('perryCart').then(cart => {
+            if (cart) localforage.setItem('perryCart', this.cart).then(cart => {
+                // console.log(cart)
+
+                document.getElementById('shcanot').innerText = cart.length
+            })
+        })
     }
 }
 
@@ -26,6 +75,32 @@ class Item {
         this.price = price
         this.sizes = sizes
         this.image = image
+        this.quantity = 1
+
+        this.selectedSize = this.sizes[0]
+        this.inCart = false
+
+        this.elements = {}
+
+        // this.cartItem = {name: this.name, price: this.price, size: this.selectedSize, quantity: this.quantity}
+    }
+
+    update() {
+        // this.inCart = this.Shop.cart.indexOf(this.cartItem) > -1
+        let find = findByMatchingProperties(this.Shop.cart, this.getCartItem())
+        this.inCart = find.length>0
+
+        // console.log(find, this.Shop.cart, this.inCart)
+
+        if (this.inCart) {
+            this.elements.Purchase.innerText = 'Remove from Cart'
+        } else {
+            this.elements.Purchase.innerText = 'Add to Cart'            
+        }
+    }
+
+    getCartItem() {
+        return { name: this.name, price: this.price, size: this.selectedSize, quantity: this.quantity }
     }
 
     append(el) {     
@@ -50,8 +125,16 @@ class Item {
         let Purchase = document.createElement('button')
         Purchase.innerText = 'Add to Cart'
 
+        this.elements.Purchase = Purchase
+
         Purchase.addEventListener('click', () => {
-            this.Shop.addToCart(this)
+            if (!this.inCart) {
+                this.Shop.addToCart(this)
+            } else {
+                this.Shop.removeFromCart(this)
+            }
+
+            this.update()
         })
 
         let sizes = document.createElement('select')
@@ -61,6 +144,15 @@ class Item {
             option.innerText = size
             sizes.appendChild(option)
         }
+
+        sizes.addEventListener('change', e => {
+            this.selectedSize = sizes.value
+            // this.cartItem.size = this.selectedSize
+
+            // console.log(this.cartItem.size)
+
+            this.update()
+        })
 
         Photo.appendChild(Image)
         Item.appendChild(Photo)
@@ -75,19 +167,3 @@ class Item {
         el.appendChild(Item)     
     }
 }
-
-document.addEventListener('DOMContentLoaded', (event) => {
-    const shop = new Shop( document.getElementById('shop') )
-
-    shop.addItem( new Item('Perry High Athletic T-Shirt','$15.00',['XS','S','M','L','XL'],'img/pts.png') )
-    shop.addItem( new Item('Perry High Athletic T-Shirt','$15.00',['XS','S','M','L','XL'],'img/pts.png') )
-    shop.addItem( new Item('Perry High Athletic T-Shirt','$15.00',['XS','S','M','L','XL'],'img/pts.png') )
-    shop.addItem( new Item('Perry High Athletic T-Shirt','$15.00',['XS','S','M','L','XL'],'img/pts.png') )
-    shop.addItem( new Item('Perry High Athletic T-Shirt','$15.00',['XS','S','M','L','XL'],'img/pts.png') )
-    shop.addItem( new Item('Perry High Athletic T-Shirt','$15.00',['XS','S','M','L','XL'],'img/pts.png') )
-    shop.addItem( new Item('Perry High Athletic T-Shirt','$15.00',['XS','S','M','L','XL'],'img/pts.png') )
-
-    shop.render()
-
-    console.log(shop)    
-})
