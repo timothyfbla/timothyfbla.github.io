@@ -16,15 +16,13 @@
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
-    const shop = new Shop( document.getElementById('shop') )
+    const shop = new ShopDisplay( document.getElementById('shop') )
 
-    shop.addItem( new Item('Perry High Athletic T-Shirt1','$15.00',['XS','S','M','L','XL'],'img/pts.png') )
-    shop.addItem( new Item('Perry High Athletic T-Shirt2','$15.00',['XS','S','M','L','XL'],'img/pts.png') )
-    shop.addItem( new Item('Perry High Athletic T-Shirt3','$15.00',['XS','S','M','L','XL'],'img/pts.png') )
-    shop.addItem( new Item('Perry High Athletic T-Shirt4','$15.00',['XS','S','M','L','XL'],'img/pts.png') )
-    shop.addItem( new Item('Perry High Athletic T-Shirt5','$15.00',['XS','S','M','L','XL'],'img/pts.png') )
-    shop.addItem( new Item('Perry High Athletic T-Shirt6','$15.00',['XS','S','M','L','XL'],'img/pts.png') )
-    shop.addItem( new Item('Perry High Athletic T-Shirt7','$15.00',['XS','S','M','L','XL'],'img/pts.png') )
+    shop.addItem( new ShopItem('Perry High Athletic T-Shirt','$15.00',['XS','S','M','L','XL'],'img/pts.png') )
+    shop.addItem( new ShopItem('Fight Song Sweatshirt','$30.00',['XS','S','M','L','XL'],'img/phho.png') )
+    shop.addItem( new ShopItem('Perry High Water Bottle','$15.00',['20fl. oz', '32fl. oz'],'img/phwb.png') )
+    shop.addItem( new ShopItem('Perry Panther Button','$3.00',['2in', '4in'],'img/phb.png') )
+    shop.addItem( new ShopItem('Perry P Snapback','$7.00',['One size fits all'],'img/phh.png') )
 
     shop.render()
 

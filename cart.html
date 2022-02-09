@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Shopping Cart</title>
     <link href="style/index.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,10 +15,10 @@
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     <script src="js/index.js"></script>
     <script>
-                document.addEventListener('DOMContentLoaded', (event) => {
-    const shop = new Shop()
-                    
-})
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const shop = new CartDisplay( document.getElementById('shop') )
+            shop.render()
+        })
     </script>
     <style>
         main #shop{
@@ -54,8 +54,28 @@
         /* main #shop .item .photo img:hover{
             transform: scale(5);
         } */
+
+        #shop button:last-of-type {
+            background-color: #af4c4c; /* Green 4CAF50*/
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 9px;
+            box-shadow: rgba(85, 85, 85, 0.5) 0px 2px 2px;
+            cursor: pointer;
+            transition: all 0.1s ease-out;
+            margin-top: 20px;
+            height: 50px;
+            width: 100px;
+            margin-left: auto;
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
     </style>
-</head>
+<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
 <body>
     <h1 style="text-align: center; background-color: #bbb;">Perry High School Merchandise</h1>
     <header>
@@ -73,7 +93,7 @@
     </header>
 <main>
     <div id="shop">
-        <div class="item">
+        <!-- <div class="item">
             <div class="photo"><img src="img/phho.png"></div>
             <div class="description"><p>Fight Song Hoodie [XL]</p>
             <p>$30.00</p>
@@ -84,8 +104,8 @@
             <div class="description"><p>Fight Song Hoodie</p>
             <p>$30.00</p>
             <button>Remove from Cart</button></div>
-        </div>
-        <button style="
+        </div> -->
+        <!-- <button style="
         
         background-color: #af4c4c; /* Green 4CAF50*/
         border: none;
@@ -105,8 +125,11 @@
         margin-right: 20px;
         margin-bottom: 10px;
 
-        ">Check Out</button>
+        ">Check Out</button> -->
     </div>
 </main>
-</body>
+<footer>
+    <p>Website Written for E-Business Category in FBLA by Timothy Zayac.</p>
+</footer>
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6daa2eeb9e7c63b7',m:'BLbstOP3ufBFMXF5I9IJx57Tl6CT_uDsqfm39URK5cE-1644379148-0-AZFIaa/Ox/Q6OWf1yWMzFPrLBUiqcMt2mCgKsQdEkhckNwtvQYvvPJyK2hdiswb+7Cdp7wwQxfOMf1HZDEBzFIUkLG4HWG+jsf3Yp8/yNh0ga4BtGBRBRH4LZIvCT+ZvabRiumai4x1lvtvOFY6DpU6ClXuh9H+QGJMH5nKFS/pweeyOPEZgW/jVGTGf7BT9Wg==',s:[0x518dbce65e,0x8b9ba08365],}})();</script></body>
 </html>
