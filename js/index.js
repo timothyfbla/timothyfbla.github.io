@@ -73,8 +73,14 @@ class ShopDisplay extends Shop {
 
     render() {
         for (let item of this.items) {
-            item.append(this.el)
+            item === 'linebreak' ? this.el.appendChild(document.createElement('hr')) : item.append(this.el)
         }
+    }
+    addBreak() {
+        // let br = document.createElement ('br')
+        // this.el.appendChild(br)
+        this.items.push('linebreak')
+
     }
 }
 
@@ -300,3 +306,4 @@ class CartItem extends Item {
         el.appendChild(Item)     
     }
 }
+

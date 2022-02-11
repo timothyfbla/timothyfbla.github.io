@@ -16,18 +16,8 @@
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
-    const shop = new ShopDisplay( document.getElementById('shop') )
-
-    shop.addItem( new ShopItem('Perry High Athletic T-Shirt','$15.00',['XS','S','M','L','XL'],'img/pts.png') )
-    shop.addItem( new ShopItem('Fight Song Sweatshirt','$30.00',['XS','S','M','L','XL'],'img/phho.png') )
-    shop.addItem( new ShopItem('Perry High Water Bottle','$15.00',['20fl. oz', '32fl. oz'],'img/phwb.png') )
-    shop.addItem( new ShopItem('Perry Panther Button','$3.00',['2in', '4in'],'img/phb.png') )
-    shop.addItem( new ShopItem('Perry P Snapback','$7.00',['One size fits all'],'img/phh.png') )
-
-    shop.render()
-
-    // console.log(shop)    
-})
+            const shop = new Shop()
+        })
     </script>
 
     <style>
@@ -50,13 +40,14 @@
 
     </style>
 <body>
-    <h1 style="text-align: center; background-color: #bbb;">Perry High School Merchandise</h1>
+    <h1 style="text-align: center; background-color: #2E1E1F; color: white;">Perry High School Merchandise</h1>
     <header>
         <ul>
             <a href="index.html"><li>Home</li></a>
+            <a href="shop.html"><li>Shop</li></a>
             <a href="about.html"><li>About Shop</li></a>
             <a href="contactus.html"><li>Contact Us</li></a>
-            <a href="https://phs.hcbe.net"><li>PHS</li></a>
+            <a href="https://phs.hcbe.net" target="_blank" rel="noopener noreferrer"><li>PHS</li></a>
             <a href="cart.html"><li>Shopping Cart
                 <div class="shcanot" id="shcanot">
                 0
@@ -79,68 +70,10 @@
       </div>
     <main>
         <div id="shop">
-            <!-- <div class="item">
-                <div class="photo"><img src="img/phho.png"></div>
-                <div class="description"><p>Fight Song Hoodie</p>
-                <p>$30.00 
-                    <select style="margin-left: 10px;">
-                        <option>XS</option>
-                        <option>S</option>
-                        <option>M</option>
-                        <option>L</option>
-                        <option>XL</option>
-                    </select>
-                </p>
-                <button>Purchase</button></div>
-            </div>
-            <div class="item">
-                <div class="photo"><img src="img/phh.png"></div>
-                <div class="description"><p>Perry P Strap-back Hat</p>
-                <p>$7.00</p>
-                <button>Purchase</button></div>
-            </div>
-            <div class="item">
-                <div class="photo"><img src="img/phwb.png"></div>
-                <div class="description"><p>Perry Camelbak Water Bottle</p>
-                <p>$12.00</p>
-                <button>Purchase</button></div>
-            </div>
-            <div class="item">
-                <div class="photo"><img src="img/pts.png"></div>
-                <div class="description"><p>Perry P Athletic T-Shirt</p>
-                <p>$18.00</p>
-                <button>Purchase</button></div>
-            </div>
-            <div class="item">
-                <div class="photo"><img src="img/phb.png"></div>
-                <div class="description"><p>Perry Panther Button</p>
-                <p>$3.00</p>
-                <button>Purchase</button></div>
-            </div>
-            <div class="item">
-                <div class="photo"><img src="img/phho.png"></div>
-                <div class="description"><p>Fight Song Hoodie</p>
-                <p>$30.00</p>
-                <button>Purchase</button></div>
-            </div>
-            <div class="item">
-                <div class="photo"><img src="img/phh.png"></div>
-                <div class="description"><p>Perry P Strap-back Hat</p>
-                <p>$7.00</p>
-                <button>Purchase</button></div>
-            </div>
-            <div class="item">
-                <div class="photo"><img src="img/phwb.png"></div>
-                <div class="description"><p>Perry Camelbak Water Bottle</p>
-                <p>$12.00</p>
-                <button>Purchase</button></div>
-            </div>
-            <div class="item">
-                <div class="photo"><img src="img/pts.png"></div>
-                <div class="description"><p>Perry P Athletic T-Shirt</p>
-                <p>$18.00</p>
-                <button>Purchase</button></div>
-            </div> -->
+            <h1 style="
+                color: white;
+                ">Welcome to the Perry High School Merchandise Store!</h1>
+            <p></p>
         </div>
     </main>
     <footer>

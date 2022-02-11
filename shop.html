@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHS Merchandise</title>
+    <link href="style/index.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    <script src="js/localforage.min.js"></script>
+    <script src="js/splide.min.js"></script>
+    <script src="js/index.js"></script>
+    <link href="style/splide.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+    const shop = new ShopDisplay( document.getElementById('shop') )
+
+    shop.addItem( new ShopItem('Perry High Athletic T-Shirt','$15.00',['XS','S','M','L','XL'],'img/pts.png') )
+    shop.addItem( new ShopItem('Fight Song Sweatshirt','$30.00',['XS','S','M','L','XL'],'img/phho.png') )
+    shop.addBreak()
+    shop.addItem( new ShopItem('Perry P Snapback','$7.00',['One size fits all'],'img/phh.png') )
+    shop.addBreak()
+    shop.addItem( new ShopItem('Perry High Water Bottle','$15.00',['20fl. oz', '32fl. oz'],'img/phwb.png') )
+    shop.addItem( new ShopItem('Perry Panther Button','$3.00',['2in', '4in'],'img/phb.png') )
+
+    shop.render()
+
+    // console.log(shop)    
+})
+    </script>
+
+    <style>
+
+        main #shop .item .photo img{
+            border-radius: 10px;
+        }
+
+        main #shop .item .photo{
+            border-radius: 10px 10px 0 0;
+        }
+
+        main #shop .item{
+            border-radius: 10px;
+        }
+
+        main #shop{
+            border-radius: 10px;
+        }
+
+    </style>
+<body>
+    <h1 style="text-align: center; background-color: #2E1E1F; color: white;">Perry High School Merchandise</h1>
+    <header>
+        <ul>
+            <a href="index.html"><li>Home</li></a>
+            <a href="shop.html"><li>Shop</li></a>
+            <a href="about.html"><li>About Shop</li></a>
+            <a href="contactus.html"><li>Contact Us</li></a>
+            <a href="https://phs.hcbe.net" target="_blank" rel="noopener noreferrer"><li>PHS</li></a>
+            <a href="cart.html"><li>Shopping Cart
+                <div class="shcanot" id="shcanot">
+                0
+                </div>
+            </li></a>
+        </ul>
+    </header>
+    <main>
+        <div id="shop">
+            <!-- <div class="item">
+                <div class="photo"><img src="img/phho.png"></div>
+                <div class="description"><p>Fight Song Hoodie</p>
+                <p>$30.00 
+                    <select style="margin-left: 10px;">
+                        <option>XS</option>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                    </select>
+                </p>
+                <button>Purchase</button></div>
+            </div>
+            <div class="item">
+                <div class="photo"><img src="img/phh.png"></div>
+                <div class="description"><p>Perry P Strap-back Hat</p>
+                <p>$7.00</p>
+                <button>Purchase</button></div>
+            </div>
+            <div class="item">
+                <div class="photo"><img src="img/phwb.png"></div>
+                <div class="description"><p>Perry Camelbak Water Bottle</p>
+                <p>$12.00</p>
+                <button>Purchase</button></div>
+            </div>
+            <div class="item">
+                <div class="photo"><img src="img/pts.png"></div>
+                <div class="description"><p>Perry P Athletic T-Shirt</p>
+                <p>$18.00</p>
+                <button>Purchase</button></div>
+            </div>
+            <div class="item">
+                <div class="photo"><img src="img/phb.png"></div>
+                <div class="description"><p>Perry Panther Button</p>
+                <p>$3.00</p>
+                <button>Purchase</button></div>
+            </div>
+            <div class="item">
+                <div class="photo"><img src="img/phho.png"></div>
+                <div class="description"><p>Fight Song Hoodie</p>
+                <p>$30.00</p>
+                <button>Purchase</button></div>
+            </div>
+            <div class="item">
+                <div class="photo"><img src="img/phh.png"></div>
+                <div class="description"><p>Perry P Strap-back Hat</p>
+                <p>$7.00</p>
+                <button>Purchase</button></div>
+            </div>
+            <div class="item">
+                <div class="photo"><img src="img/phwb.png"></div>
+                <div class="description"><p>Perry Camelbak Water Bottle</p>
+                <p>$12.00</p>
+                <button>Purchase</button></div>
+            </div>
+            <div class="item">
+                <div class="photo"><img src="img/pts.png"></div>
+                <div class="description"><p>Perry P Athletic T-Shirt</p>
+                <p>$18.00</p>
+                <button>Purchase</button></div>
+            </div> -->
+        </div>
+    </main>
+    <footer>
+        <p>Website Written for E-Business Category in FBLA by Timothy Zayac.</p>
+    </footer>
+    <script>
+        const slide = new Splide( '.splide', {autoplay:true} );
+        slide.mount();
+      </script>
+</body>
+</html>

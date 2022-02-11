@@ -1,6 +1,7 @@
 body{
     font-family: roboto;
     margin: 0;
+    background-color: #2E1E1F;
 }
 
 header {
@@ -8,7 +9,7 @@ header {
 
     display: flex;
 
-    background: #aaa;
+    background: #2E1E1F;
 
     align-items: center;
     justify-content: center;
@@ -28,14 +29,13 @@ header ul a {
 
     padding: 10px;
     margin: 5px;
-    border: #666 solid;
-    box-shadow: rgba(85, 85, 85, 0.5) 0px 5px 7px;
+    border: #6b292e solid;
     transition: .11s ease-out;
     color:inherit;
     text-decoration: inherit;
     font-size: 1.2em;
-
-    background: #ccc;
+    color: white;
+    background: #7e353b; 
 }
 
 header ul a:hover {
@@ -52,8 +52,8 @@ header ul a:last-of-type {
 }
 
 header ul .shcanot{
-    background-color: #af4c4c;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
     padding: 7px;
     border-radius: 50px;
     box-shadow: rgba(85, 85, 85, 0.5) 0px 2px 7px;
@@ -63,15 +63,17 @@ header ul .shcanot{
 #shop{
     display: flex;
     width: 63%;
-    background-color: #aaa;
+    background-color: #2E1E1F;
     padding: 6px;
+    margin-top: 10px;
     flex-wrap: wrap;
     justify-content: center;
+    border: solid rgb(107, 56, 56) 1.5px;
 }
 
 #shop .item{
     width: 300px;
-    background-color: #ddd;
+    background-color: #6b292e;
     margin: 6px;
     width: 250px;
     height: 350px;
@@ -87,6 +89,7 @@ header ul .shcanot{
     flex: 1;
     padding-bottom: 5px;
     padding-top: 2px;
+    color: white;
 }
 
 #shop .item .description p{
@@ -109,7 +112,7 @@ header ul .shcanot{
 }
 
 #shop .item button{
-    background-color: #af4c4c; /* Green 4CAF50*/
+    background-color: #461e21; /* Green 4CAF50*/
     border: none;
     color: white;
     text-align: center;
@@ -117,7 +120,6 @@ header ul .shcanot{
     display: inline-block;
     font-size: 16px;
     border-radius: 9px;
-    box-shadow: rgba(85, 85, 85, 0.5) 0px 2px 2px;
     cursor: pointer;
     transition: all 0.1s ease-out;
 }
@@ -129,7 +131,7 @@ header ul .shcanot{
 
 #shop .item .photo{
     padding: 10px;
-    background-color: #bbb;
+    background-color: #7e353b;
     flex: 1;
 }
 
@@ -144,7 +146,7 @@ header ul .shcanot{
 main {
     display: flex;
     width: 100%;
-    background-color: #bbb;
+    background-color: #2E1E1F;
     justify-content: center;
     padding-bottom: 30px;
 }
@@ -173,7 +175,8 @@ main {
 footer{
     padding-top: 15px;
     padding-bottom: 15px;
-    background-color: #888;
+    background-color: #46191f;
+    color: white;
     border-radius: 10px 10px 0 0 ;
     width: 100%;
     text-align: center;
@@ -187,12 +190,15 @@ main h1{
     text-align: center;
 }
 
-body{
-    background-color: #bbb;
-}
-
 .description p select{
     margin-left: 10px;
+}
+
+hr{
+    width: 100%;
+    border: 0;
+    height: 1px;
+    background-color: rgb(107, 56, 56);
 }
 
 /* #800000 red
