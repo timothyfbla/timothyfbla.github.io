@@ -1,6 +1,3 @@
-
-
-
 function findByMatchingProperties(set, properties) {
     return set.filter(function (entry) {
         return Object.keys(properties).every(function (key) {
@@ -32,7 +29,7 @@ class Shop {
 
     updateItems() {
         for (let item of this.items) {
-            item.update()
+            !item.linebreak && item.update()
         }        
     }
 
@@ -73,13 +70,21 @@ class ShopDisplay extends Shop {
 
     render() {
         for (let item of this.items) {
-            item === 'linebreak' ? this.el.appendChild(document.createElement('hr')) : item.append(this.el)
+            // item === 'linebreak' ? this.el.appendChild(document.createElement('hr')) : item.append(this.el)
+            if (item.linebreak) {
+                let hr = document.createElement('hr')
+                hr.setAttribute('data-category', item.category)
+
+                this.el.appendChild(hr)
+            } else {
+                item.append(this.el)
+            }
         }
     }
-    addBreak() {
+    addBreak(category) {
         // let br = document.createElement ('br')
         // this.el.appendChild(br)
-        this.items.push('linebreak')
+        this.items.push({linebreak: true, category: category})
 
     }
 }
@@ -154,7 +159,14 @@ class Item {
     }
 
     getCartItem() {
-        return { name: this.name, price: this.price, size: this.selectedSize, image: this.image, quantity: this.quantity }
+        return { name: this.name, price: this.price, size: this.selectedSize, image: this.image }
+    }
+
+    setQuantity(n) {
+        this.quantity = n
+    }
+    getQuantity() {
+        return this.quantity
     }
 }
 
@@ -172,8 +184,10 @@ class ShopItem extends Item {
 
         if (this.inCart) {
             this.elements.Purchase.innerText = 'Remove from Cart'
+            // this.elements.quantity.setAttribute('disabled', 'true')
         } else {
-            this.elements.Purchase.innerText = 'Add to Cart'            
+            this.elements.Purchase.innerText = 'Add to Cart'    
+            // this.elements.quantity.removeAttribute('disabled')
         }
     }
 
@@ -196,10 +210,25 @@ class ShopItem extends Item {
         let ItemPrice = document.createElement('p')
         ItemPrice.innerText = this.price
 
+        let pursection = document.createElement('div')
+        pursection.style.display = 'flex'
+
+        pursection.setAttribute('id', 'pursection')
+
         let Purchase = document.createElement('button')
         Purchase.innerText = 'Add to Cart'
 
+        // let quantity = document.createElement('input')
+        // quantity.setAttribute('type', 'number')
+        // quantity.setAttribute('min', '1')
+        // quantity.value = 1
+
+        // quantity.addEventListener('change', () => {
+        //     this.quantity = quantity.value
+        // })
+
         this.elements.Purchase = Purchase
+        // this.elements.quantity = quantity
 
         Purchase.addEventListener('click', () => {
             if (!this.inCart) {
@@ -234,6 +263,10 @@ class ShopItem extends Item {
         ItemPrice.appendChild(sizes)
         Description.appendChild(ItemName)
         Description.appendChild(ItemPrice)
+
+        // pursection.appendChild(Purchase)
+        // pursection.appendChild(quantity)
+
         Description.appendChild(Purchase)
         
         Item.appendChild(Description)
@@ -263,7 +296,7 @@ class CartItem extends Item {
     // }
 
     getCartItem() {
-        return { name: this.name, price: this.price, size: this.size, image: this.image, quantity: this.quantity }
+        return { name: this.name, price: this.price, size: this.size, image: this.image }
     }
 
     append(el) {     
@@ -288,6 +321,17 @@ class CartItem extends Item {
         let Purchase = document.createElement('button')
         Purchase.innerText = 'Remove from Cart'
 
+        let qcon = document.createElement('div')
+        qcon.classList.add('quantitycon')
+
+        let qlabel = document.createElement('span')
+        qlabel.innerText = 'Quantity: '
+
+        let quantity = document.createElement('input')
+        quantity.setAttribute('type', 'number')
+        quantity.setAttribute('min', '1')
+        quantity.value = 1
+
         this.elements.Purchase = Purchase
 
         Purchase.addEventListener('click', () => {
@@ -299,6 +343,11 @@ class CartItem extends Item {
 
         Description.appendChild(ItemName)
         Description.appendChild(ItemPrice)
+
+        qcon.appendChild(qlabel)
+        qcon.appendChild(quantity)
+
+        Description.appendChild(qcon)
         Description.appendChild(Purchase)
         
         Item.appendChild(Description)
@@ -306,4 +355,3 @@ class CartItem extends Item {
         el.appendChild(Item)     
     }
 }
-

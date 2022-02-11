@@ -68,7 +68,7 @@ header ul .shcanot{
     margin-top: 10px;
     flex-wrap: wrap;
     justify-content: center;
-    border: solid rgb(107, 56, 56) 1.5px;
+    border: solid #c7aa04 1.5px;
 }
 
 #shop .item{
@@ -197,8 +197,38 @@ main h1{
 hr{
     width: 100%;
     border: 0;
-    height: 1px;
-    background-color: rgb(107, 56, 56);
+    height: 15px;
+    border-bottom: 1px solid #ffd700;
+    position: relative;
+    text-align: center;
+    padding-bottom: 3px;
+}
+
+hr::before {
+    content: attr(data-category);
+    font-size: 0.8em;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: rgb(255, 255, 255);
+}
+
+.item input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    background: #2E1E1F;
+    border: 1px solid rgb(107, 56, 56);
+    color: #fff;
+}
+
+body p{
+    color: white;
+}
+
+body h1{
+    color: rgb(189, 156, 156);
 }
 
 /* #800000 red

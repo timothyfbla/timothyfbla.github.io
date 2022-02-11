@@ -18,11 +18,12 @@
         document.addEventListener('DOMContentLoaded', (event) => {
     const shop = new ShopDisplay( document.getElementById('shop') )
 
+    shop.addBreak('Clothes')
     shop.addItem( new ShopItem('Perry High Athletic T-Shirt','$15.00',['XS','S','M','L','XL'],'img/pts.png') )
     shop.addItem( new ShopItem('Fight Song Sweatshirt','$30.00',['XS','S','M','L','XL'],'img/phho.png') )
-    shop.addBreak()
+    shop.addBreak('Hats')
     shop.addItem( new ShopItem('Perry P Snapback','$7.00',['One size fits all'],'img/phh.png') )
-    shop.addBreak()
+    shop.addBreak('Accessories')
     shop.addItem( new ShopItem('Perry High Water Bottle','$15.00',['20fl. oz', '32fl. oz'],'img/phwb.png') )
     shop.addItem( new ShopItem('Perry Panther Button','$3.00',['2in', '4in'],'img/phb.png') )
 
@@ -68,6 +69,8 @@
         </ul>
     </header>
     <main>
+        <img style="position:fixed; filter: opacity(0.8); z-index: 10; bottom: 45px; height: 700px; left: 0%;"" src="img/gears2.png">
+        <img style="position:fixed; z-index: 10; filter: opacity(0.8); right: 0%; bottom: 45px; height: 700px; padding-right: 10px;"" src="img/gears1.png">
         <div id="shop">
             <!-- <div class="item">
                 <div class="photo"><img src="img/phho.png"></div>
@@ -132,6 +135,7 @@
                 <button>Purchase</button></div>
             </div> -->
         </div>
+        
     </main>
     <footer>
         <p>Website Written for E-Business Category in FBLA by Timothy Zayac.</p>
